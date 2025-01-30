@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Blurred background */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background.jpg'); /* Replace with your background image path */
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px); /* Apply blur effect */
+      z-index: -1; /* Ensure the background stays behind the content */
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center the content */
+      gap: 20px; /* Space between logo and countdown */
+    }
+
+    #countdown-wrapper {
+      text-align: center; /* Align text in the countdown div */
+    }
+
+    #countdown {
+      font-size: 48px;
+      font-weight: bold;
+      padding: 20px;
+      color: white; /* White text */
+      background-color: rgba(51, 51, 51, 0.7); /* Slightly transparent background for the countdown box */
+      border-radius: 10px;
+    }
+
+    #logo {
+      width: 500px; /* Size of the logo */
+      height: 500px; /* Size of the logo */
+    }
+
+    #countdown-heading {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img id="logo" src="LOGO.jpg" alt="Logo"> <!-- Replace with your logo image path -->
+    <div id="countdown-wrapper">
+      <div id="countdown-heading">Days Till Mayhem</div>
+      <div id="countdown"></div>
+    </div>
+  </div>
+
+  <script>
+    // Set the target date for March 7, 2025
+    const targetDate = new Date("March 7, 2025 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const interval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      // Time calculations for days, hours, minutes, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the countdown div
+      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(interval);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

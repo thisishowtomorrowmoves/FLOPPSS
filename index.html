@@ -1,236 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official website of Billie Eilish, an American singer-songwriter known for her unique style and music.">
-    <title>Billie Eilish - Official Website</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Home</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fce8f7; /* Light pink background */
+      color: #333;
+      position: relative;
+      padding-top: 60px; /* Space for fixed header */
+    }
 
-        /* Container */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
+    /* Watermark */
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 5em;
+      color: rgba(0, 0, 0, 0.1);
+      z-index: -1;
+    }
 
-        /* Header */
-        header {
-            background-color: #1e1e1e;
-            color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
+    /* Header */
+    header {
+      background-color: #ff80bf; /* Light pink */
+      padding: 1rem;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
 
-        header h1 {
-            font-size: 3.5em;
-            font-weight: bold;
-        }
+    nav .menu-btn {
+      background-color: #ff80bf;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      padding: 10px;
+    }
 
-        header p {
-            font-size: 1.2em;
-            font-weight: 300;
-            margin-top: 10px;
-        }
+    nav .menu {
+      display: none;
+      background-color: #ff80bf;
+      position: absolute;
+      top: 3rem;
+      left: 0;
+      width: 200px;
+      z-index: 9;
+    }
 
-        /* About Section */
-        .about {
-            background-color: #fff;
-            padding: 50px 0;
-            text-align: center;
-        }
+    nav .menu ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+    nav .menu ul li {
+      padding: 1rem;
+    }
 
-        .about p {
-            font-size: 1.2em;
-            color: #555;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    nav .menu ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
 
-        /* Career Section */
-        .career {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-        }
+    nav .menu ul li:hover {
+      background-color: #ff66b2; /* Slightly darker pink */
+    }
 
-        .career h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    /* Main Content */
+    main {
+      margin-top: 80px; /* Space for fixed header */
+      text-align: center;
+    }
 
-        .career ul {
-            list-style: none;
-            text-align: center;
-        }
+    #popular-products {
+      padding: 2rem 0;
+    }
 
-        .career ul li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
+    #popular-products h2 {
+      font-size: 2.5em;
+      margin-bottom: 1rem;
+      color: #ff66b2; /* Light pink */
+    }
 
-        /* Discography Section */
-        .discography {
-            background-color: #fff;
-            padding: 50px 0;
-        }
+    .product-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
 
-        .discography h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    .product {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-        .discography ul {
-            list-style: none;
-            text-align: center;
-        }
+    .product:hover {
+      transform: scale(1.05);
+    }
 
-        .discography ul li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
 
-        /* Social Media Section */
-        .social-media {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-            text-align: center;
-        }
+    .product p {
+      margin: 0.5rem 0;
+      font-size: 1.2em;
+      color: #333;
+    }
 
-        .social-media h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+    /* Footer */
+    footer {
+      background-color: #ff80bf; /* Light pink */
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
-        .social-media ul {
-            list-style: none;
-            padding: 0;
-        }
+    /* Mobile Menu Toggle */
+    @media screen and (max-width: 768px) {
+      nav .menu {
+        display: block;
+      }
 
-        .social-media ul li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .social-media a {
-            color: #1e1e1e;
-            text-decoration: none;
-        }
-
-        .social-media a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1e1e1e;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 1em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            section h2 {
-                font-size: 2em;
-            }
-        }
-    </style>
+      .product-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Watermark -->
+  <div class="watermark">Lucas Comms 2025</div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <h1>Billie Eilish</h1>
-            <p>American Singer-Songwriter | 7x Grammy Award Winner</p>
-        </div>
-    </header>
+  <!-- Header with menu button -->
+  <header>
+    <nav>
+      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+      <div class="menu" id="menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#popular-products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <h2>About Billie</h2>
-            <p>Billie Eilish is an American singer-songwriter who rose to fame with her debut single "Ocean Eyes" in 2015. Known for her unique sound and hauntingly beautiful vocals, Billie has become one of the most influential and iconic artists of her generation. Her music blends pop, alternative, and electronic genres, resonating with millions around the world.</p>
+  <!-- Main Content -->
+  <main id="home">
+    <section id="popular-products">
+      <h2>Popular</h2>
+      <div class="product-container">
+        <div class="product">
+          <img src="https://via.placeholder.com/200" alt="Product 1">
+          <p>Product 1</p>
+          <p>$29.99</p>
         </div>
+        <div class="product">
+          <img src="https://via.placeholder.com/200" alt="Product 2">
+          <p>Product 2</p>
+          <p>$39.99</p>
+        </div>
+        <div class="product">
+          <img src="https://via.placeholder.com/200" alt="Product 3">
+          <p>Product 3</p>
+          <p>$49.99</p>
+        </div>
+        <div class="product">
+          <img src="https://via.placeholder.com/200" alt="Product 4">
+          <p>Product 4</p>
+          <p>$59.99</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Career Highlights Section -->
-    <section class="career">
-        <div class="container">
-            <h2>Career Highlights</h2>
-            <ul>
-                <li>Debut album *When We All Fall Asleep, Where Do We Go?* (2019) became a global hit</li>
-                <li>Winner of 7 Grammy Awards in 2020, including Album of the Year, Record of the Year, and Song of the Year</li>
-                <li>Released *Happier Than Ever* (2021), which also topped charts worldwide</li>
-                <li>Known for her activism, fashion sense, and advocacy for mental health awareness</li>
-            </ul>
-        </div>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a small online shop offering amazing products at great prices. Welcome to our world!</p>
     </section>
 
-    <!-- Discography Section -->
-    <section class="discography">
-        <div class="container">
-            <h2>Discography</h2>
-            <ul>
-                <li><strong>When We All Fall Asleep, Where Do We Go?</strong> (2019) - Featuring hits like "Bad Guy"</li>
-                <li><strong>Happier Than Ever</strong> (2021) - Featuring hits like "Your Power" and "Therefore I Am"</li>
-                <li><strong>Singles</strong> - "Ocean Eyes" (2015), "Bury a Friend" (2019), and many more.</li>
-            </ul>
-        </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out to us via email at contact@lucascomms.com.</p>
     </section>
+  </main>
 
-    <!-- Social Media Section -->
-    <section class="social-media">
-        <div class="container">
-            <h2>Follow Billie</h2>
-            <p>Stay connected with Billie Eilish on her social media platforms:</p>
-            <ul>
-                <li><a href="https://www.instagram.com/billieeilish/" target="_blank">Instagram</a></li>
-                <li><a href="https://twitter.com/billieeilish" target="_blank">Twitter</a></li>
-                <li><a href="https://www.youtube.com/c/BillieEilish" target="_blank">YouTube</a></li>
-                <li><a href="https://www.tiktok.com/@billieeilish" target="_blank">TikTok</a></li>
-            </ul>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Lucas Comms</p>
+  </footer>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Billie Eilish. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>

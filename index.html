@@ -1,221 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - Home</title>
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        /* Basic CSS styling */
+        body.index-page {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #a2c2e4, #f1c4d6); /* Baby blue to baby pink gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column; /* Stack header and button */
+            padding-top: 60px; /* Space for the header bar */
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fce8f7; /* Light pink background */
-      color: #333;
-      position: relative;
-      padding-top: 60px; /* Space for fixed header */
-    }
+        /* Header bar styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1c4d6; /* Baby pink background */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 30px;
+            font-weight: bold;
+            z-index: 1000; /* Ensure it stays on top */
+        }
 
-    /* Header */
-    header {
-      background-color: #ff80bf; /* Light pink */
-      padding: 1rem;
-      color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-    }
+        .container {
+            text-align: center;
+        }
 
-    nav .menu-btn {
-      background-color: #ff80bf;
-      border: none;
-      color: white;
-      font-size: 1.5em;
-      cursor: pointer;
-      padding: 10px;
-    }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: rgba(241, 196, 214, 0.7); /* Baby pink with transparency */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+        }
 
-    nav .menu {
-      display: none;
-      background-color: #ff80bf;
-      position: absolute;
-      top: 3rem;
-      left: 0;
-      width: 200px;
-      z-index: 9;
-    }
-
-    nav .menu ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    nav .menu ul li {
-      padding: 1rem;
-    }
-
-    nav .menu ul li a {
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
-
-    nav .menu ul li:hover {
-      background-color: #ff66b2; /* Slightly darker pink */
-    }
-
-    /* Main Content */
-    main {
-      margin-top: 80px; /* Space for fixed header */
-      text-align: center;
-    }
-
-    #popular-products {
-      padding: 2rem 0;
-    }
-
-    #popular-products h2 {
-      font-size: 2.5em;
-      margin-bottom: 1rem;
-      color: #ff66b2; /* Light pink */
-    }
-
-    .product-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .product {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 200px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-    }
-
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .product p {
-      margin: 0.5rem 0;
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #ff80bf; /* Light pink */
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    /* Mobile Menu Toggle */
-    @media screen and (max-width: 768px) {
-      nav .menu {
-        display: block;
-      }
-
-      .product-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+        button:hover {
+            background-color: rgba(241, 196, 214, 1); /* Full opacity on hover */
+        }
+    </style>
 </head>
-<body>
-  <!-- Header with menu button -->
-  <header>
-    <nav>
-      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
-      <div class="menu" id="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li> <!-- Home link -->
-          <li><a href="#popular-products">Products</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<body class="index-page">
+    <!-- Header Bar -->
+    <header>
+        ??
+    </header>
 
-  <!-- Main Content -->
-  <main id="home">
-    <section id="popular-products">
-      <h2>Popular</h2>
-      <div class="product-container">
-        <div class="product">
-          <a href="product1.html">
-            <img src="https://via.placeholder.com/200" alt="Product 1">
-            <p>Product 1</p>
-            <p>$29.99</p>
-          </a>
-        </div>
-        <div class="product">
-          <a href="product2.html">
-            <img src="https://via.placeholder.com/200" alt="Product 2">
-            <p>Product 2</p>
-            <p>$39.99</p>
-          </a>
-        </div>
-        <div class="product">
-          <a href="product3.html">
-            <img src="https://via.placeholder.com/200" alt="Product 3">
-            <p>Product 3</p>
-            <p>$49.99</p>
-          </a>
-        </div>
-        <div class="product">
-          <a href="product4.html">
-            <img src="https://via.placeholder.com/200" alt="Product 4">
-            <p>Product 4</p>
-            <p>$59.99</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>About Us</h2>
-      <p>We are a small online shop offering amazing products at great prices. Welcome to our world!</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Feel free to reach out to us via email at contact@lucascomms.com.</p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Lucas Comms</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+    <div class="container">
+        <button onclick="window.location.href='rachel.html'">???</button>
+    </div>
 </body>
 </html>
+
